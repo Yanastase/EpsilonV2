@@ -6,14 +6,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
 
     
-    if ($imageFileType !== "png") {
+    if ($imageFileType !== "pdf") {
         die("Erreur : Seuls les fichiers PNG sont autorisés.");
     }
 
     
     $file_mime = mime_content_type($file["tmp_name"]);
     if ($file_mime !== "image/png") {
-        die("Erreur : Le fichier n'est pas un véritable PNG.");
+        die("Erreur : Le fichier n'est pas un véritable pdf.");
     }
 
 
